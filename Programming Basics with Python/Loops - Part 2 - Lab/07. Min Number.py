@@ -1,0 +1,13 @@
+counter = int(input())
+i = 1
+max_num = 999999999
+
+while i <= counter:
+    current_num = int(input())
+    if current_num < max_num:
+        max_num = current_num
+        i += 1
+    else:
+        i += 1
+
+print(max_num)
