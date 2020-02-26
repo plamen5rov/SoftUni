@@ -1,16 +1,22 @@
 first = int(input())
 second = int(input())
 for number in range(first, second + 1):
-    number_to_str = str(number)
+
     even_sum = 0
     odd_sum = 0
+    counter = 1
+    number_copy = number
 
-    for index, digit in enumerate(number_to_str):
+    while number_copy > 0:
+        last = number_copy % 10
 
-        if index % 2 == 0:
-            even_sum += int(digit)
+
+        if counter % 2 == 0:
+            even_sum += last
         else:
-            odd_sum += int(digit)
+            odd_sum += last
+        number_copy = number_copy // 10
+        counter += 1
 
     if even_sum == odd_sum:
         print(number, end=" ")
