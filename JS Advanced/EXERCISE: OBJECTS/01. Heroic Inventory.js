@@ -1,13 +1,14 @@
-function inventory(data){
+function inventory(input) {
 
-    return JSON.stringify(data.reduce((acc, heroString, i, arr) => {
+    let heroes = [];
 
-        let [name, level, items] = heroString.split(' / ')
+    for (let line of input) {
+        let [name, level, items] = line.split(' / ');
+        level = Number(level);
+        items = items ? items.split(', ') : [];
+        heroes.push({ name, level, items });
 
-        acc.push({name, level: Number(level), items: items ? items.split(',').map(x => x.trim()) : []})
+    }
 
-        return acc;
-
-        //return [...acc, {name: heroName, age, inventory}]
-    }, []));
+    return JSON.stringify(heroes);
 }
