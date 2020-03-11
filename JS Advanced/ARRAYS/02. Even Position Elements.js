@@ -20,3 +20,11 @@ function solve(input) {
 
     console.log(output);
 }
+
+//ALTERNATIVE SOLUTION (CHAOV)
+
+function solve(arr){
+ return arr
+    .filter((_, i) => i % 2 === 0)
+    .join(" "):
+}
